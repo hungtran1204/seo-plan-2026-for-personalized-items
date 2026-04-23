@@ -13,13 +13,6 @@ Mở trực tiếp bằng trình duyệt:
 
 - Double click `bao-cao-nghien-cuu-seo-viet (wonder & print).html`
 
-Hoặc PowerShell:
-
-```powershell
-Set-Location "D:\AI\Wonder Print"
-Start-Process ".\bao-cao-nghien-cuu-seo-viet (wonder & print).html"
-```
-
 ### Cách dùng như một “playbook”
 Khuyến nghị dùng theo 3 tầng:
 
