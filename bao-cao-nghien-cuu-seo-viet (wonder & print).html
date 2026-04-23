@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nghiên Cứu SEO Thương Mại Điện Tử Cá Nhân Hóa Đa Ngách</title>
+  <meta name="description" content="Báo cáo nghiên cứu SEO chiến lược cho thương mại điện tử cá nhân hóa đa ngách (Wonder Print Shop & Print Your Wear) – dịch sang tiếng Việt, kèm key insights." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== DESIGN TOKENS ===== */
+    :root {
+      --bg-primary: #0d0f18;
+      --bg-surface: #13162a;
+      --bg-card: #1a1e35;
+      --bg-card-hover: #1e2440;
+      --accent-primary: #6c63ff;
+      --accent-secondary: #ff6b9d;
+      --accent-gold: #ffd166;
+      --accent-cyan: #06d6a0;
+      --accent-orange: #f77f00;
+      --text-primary: #f0f2ff;
+      --text-secondary: #9ba3c9;
+      --text-muted: #606888;
+      --border: rgba(108, 99, 255, 0.25);
+      --border-hover: rgba(108, 99, 255, 0.55);
+      --shadow-glow: 0 0 40px rgba(108, 99, 255, 0.2);
+      --shadow-card: 0 8px 32px rgba(0,0,0,0.4);
+      --radius: 16px;
+      --radius-sm: 8px;
+      --radius-lg: 24px;
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.75;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ===== BACKGROUND DECO ===== */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -200px; left: -200px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(108,99,255,0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,107,157,0.10) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ===== LAYOUT ===== */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #0d0f18 0%, #1a1040 50%, #0d1828 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 80px 0 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236c63ff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.4);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
+      color: #a59fff;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-badge span { width: 6px; height: 6px; background: var(--accent-primary); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;}50%{opacity:0.4;} }
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #f0f2ff 0%, var(--accent-primary) 50%, var(--accent-cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    .hero-meta {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+    }
+    .hero-meta strong { color: var(--accent-cyan); }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 780px;
+      line-height: 1.8;
+    }
+
+    /* ===== KEY INSIGHTS BANNER ===== */
+    .insights-section {
+      padding: 60px 0;
+      background: linear-gradient(180deg, #0d0f18 0%, #111326 100%);
+    }
+    .section-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 40px;
+      color: var(--text-primary);
+    }
+    .section-title span { color: var(--accent-primary); }
+
+    .insights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .insight-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .insight-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-glow);
+    }
+    .insight-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+    .insight-card.c-purple::before { background: linear-gradient(90deg, var(--accent-primary), #b44bff); }
+    .insight-card.c-pink::before   { background: linear-gradient(90deg, var(--accent-secondary), #ff9966); }
+    .insight-card.c-gold::before   { background: linear-gradient(90deg, var(--accent-gold), #ff9900); }
+    .insight-card.c-cyan::before   { background: linear-gradient(90deg, var(--accent-cyan), #00b4d8); }
+    .insight-card.c-orange::before { background: linear-gradient(90deg, var(--accent-orange), #ffbe0b); }
+    .insight-card.c-red::before    { background: linear-gradient(90deg, #ef476f, #f77f00); }
+
+    .insight-icon {
+      font-size: 2rem; margin-bottom: 14px;
+      display: block;
+    }
+    .insight-num {
+      position: absolute; top: 18px; right: 20px;
+      font-size: 3.5rem; font-weight: 800;
+      color: rgba(108,99,255,0.07);
+      font-family: 'Outfit', sans-serif;
+      line-height: 1;
+      user-select: none;
+    }
+    .insight-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+    .insight-card p { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; }
+    .insight-tag {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+    .c-purple .insight-tag { background: rgba(108,99,255,0.15); color: #a59fff; }
+    .c-pink   .insight-tag { background: rgba(255,107,157,0.15); color: #ff9dbb; }
+    .c-gold   .insight-tag { background: rgba(255,209,102,0.15); color: #ffd166; }
+    .c-cyan   .insight-tag { background: rgba(6,214,160,0.15); color: #06d6a0; }
+    .c-orange .insight-tag { background: rgba(247,127,0,0.15); color: #ffaa44; }
+    .c-red    .insight-tag { background: rgba(239,71,111,0.15); color: #ff7099; }
+
+    /* ===== MAIN CONTENT ===== */
+    .main-content { padding: 60px 0 80px; }
+
+    /* ===== SECTION CARD ===== */
+    .report-section {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 44px;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .report-section:hover { border-color: rgba(108,99,255,0.4); }
+    .report-section::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: linear-gradient(180deg, var(--accent-primary), var(--accent-secondary));
+      border-radius: 4px 0 0 4px;
+    }
+
+    .report-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem; font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .report-section h2 .icon {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, var(--accent-primary), #b44bff);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .report-section h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--accent-primary);
+      margin: 28px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .report-section p { color: var(--text-secondary); margin-bottom: 14px; font-size: 0.97rem; line-height: 1.8; }
+    .report-section p strong { color: var(--text-primary); }
+    .report-section ul, .report-section ol {
+      margin: 12px 0 16px 20px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    .report-section li { margin-bottom: 8px; line-height: 1.7; }
+    .report-section li strong { color: var(--text-primary); }
+
+    /* ===== HIGHLIGHT BOX ===== */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(108,99,255,0.1), rgba(255,107,157,0.07));
+      border: 1px solid rgba(108,99,255,0.3);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin: 20px 0;
+      font-size: 0.96rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+    .highlight-box strong { color: var(--accent-primary); }
+    .highlight-box.gold {
+      background: linear-gradient(135deg, rgba(255,209,102,0.08), rgba(247,127,0,0.05));
+      border-color: rgba(255,209,102,0.25);
+    }
+    .highlight-box.gold strong { color: var(--accent-gold); }
+    .highlight-box.cyan {
+      background: linear-gradient(135deg, rgba(6,214,160,0.08), rgba(0,180,216,0.05));
+      border-color: rgba(6,214,160,0.25);
+    }
+    .highlight-box.cyan strong { color: var(--accent-cyan); }
+
+    /* ===== TABLES ===== */
+    .table-wrapper { overflow-x: auto; margin: 20px 0; border-radius: var(--radius); border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    thead tr { background: rgba(108,99,255,0.15); }
+    thead th {
+      padding: 14px 16px;
+      text-align: left;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent-primary);
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    tbody tr {
+      border-bottom: 1px solid rgba(108,99,255,0.1);
+      transition: background 0.2s;
+    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: rgba(108,99,255,0.07); }
+    tbody td {
+      padding: 12px 16px;
+      color: var(--text-secondary);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    tbody td:first-child { font-weight: 600; color: var(--text-primary); }
+    tbody td strong { color: var(--text-primary); }
+    .score-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      font-weight: 800; font-size: 0.85rem;
+      font-family: 'Outfit', sans-serif;
+    }
+    .score-15 { background: rgba(108,99,255,0.25); color: #a59fff; }
+    .score-14 { background: rgba(6,214,160,0.2); color: #06d6a0; }
+    .score-13 { background: rgba(255,209,102,0.2); color: #ffd166; }
+    .score-12 { background: rgba(255,107,157,0.2); color: #ff9dbb; }
+    .score-11 { background: rgba(247,127,0,0.2); color: #ffaa44; }
+    .score-10 { background: rgba(239,71,111,0.15); color: #ff8aaa; }
+    .score-9  { background: rgba(96,104,136,0.25); color: #9ba3c9; }
+
+    /* ===== CALENDAR GRID ===== */
+    .calendar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 16px; margin: 24px 0; }
+    .cal-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .cal-card:hover { transform: translateY(-3px); border-color: var(--border-hover); }
+    .cal-season {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 8px; opacity: 0.7;
+    }
+    .cal-card h4 { font-family: 'Outfit', sans-serif; font-size: 0.97rem; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+    .cal-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+    .cal-priority {
+      display: inline-block; margin-top: 10px;
+      font-size: 0.7rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 100px;
+    }
+    .p-high  { background: rgba(108,99,255,0.2); color: #a59fff; }
+    .p-med   { background: rgba(6,214,160,0.15); color: #06d6a0; }
+    .p-norm  { background: rgba(255,209,102,0.15); color: #ffd166; }
+
+    /* ===== KPI GRID ===== */
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 16px; margin: 24px 0; }
+    .kpi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      transition: border-color 0.2s;
+    }
+    .kpi-card:hover { border-color: var(--border-hover); }
+    .kpi-card h4 { font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+    .kpi-card p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.5; }
+    .kpi-tag { display: inline-block; margin-top: 8px; font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 100px; background: rgba(108,99,255,0.15); color: #a59fff; }
+
+    /* ===== ABTEST ===== */
+    .abtest-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 16px; margin: 24px 0; }
+    .abtest-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      transition: border-color 0.2s;
+    }
+    .abtest-card:hover { border-color: var(--border-hover); }
+    .abtest-card h4 { font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--accent-cyan); margin-bottom: 6px; }
+    .abtest-card p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.5; }
+
+    /* ===== BRIEF TEMPLATE ===== */
+    .brief-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 26px;
+      margin-bottom: 16px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .brief-card:hover { border-color: var(--border-hover); transform: translateX(4px); }
+    .brief-card h4 { font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 700; color: var(--accent-gold); margin-bottom: 10px; }
+    .brief-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; margin-bottom: 10px; }
+    .brief-meta-item label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 600; }
+    .brief-meta-item p { font-size: 0.84rem; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+    .brief-outline { font-size: 0.83rem; color: var(--text-muted); margin-top: 8px; }
+    .brief-outline span { color: var(--text-secondary); }
+
+    /* ===== TOC ===== */
+    .toc {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 40px;
+    }
+    .toc h3 { font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; }
+    .toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc-counter; }
+    .toc li { counter-increment: toc-counter; margin-bottom: 8px; }
+    .toc li::before { content: counter(toc-counter, decimal-leading-zero); margin-right: 12px; font-size: 0.75rem; font-weight: 700; color: var(--accent-primary); font-family: 'Outfit', sans-serif; }
+    .toc a { color: var(--text-secondary); text-decoration: none; font-size: 0.92rem; transition: color 0.2s; }
+    .toc a:hover { color: var(--accent-primary); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+    footer strong { color: var(--text-secondary); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width:768px) {
+      .report-section { padding: 28px 20px; }
+      .hero { padding: 50px 0 44px; }
+      .brief-meta { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-badge"><span></span> Báo Cáo Chiến Lược SEO</div>
+    <h1>Nghiên Cứu SEO Thương Mại Điện Tử<br>Cá Nhân Hóa Đa Ngách</h1>
+    <p class="hero-meta">Ngày dịch: <strong>22/04/2026</strong> &nbsp;·&nbsp; Nguồn: deep-research-report.md &nbsp;·&nbsp; Hai website đích: <strong>Wonder Print Shop</strong> & <strong>Print Your Wear</strong></p>
+    <p class="hero-desc">Báo cáo chiến lược SEO toàn diện cho ngành thương mại điện tử cá nhân hóa, phân tích cơ hội từ các dịp lễ, nhu cầu thường xuyên, văn hóa/thể thao, và tối ưu hóa nội dung để tối đa hóa chuyển đổi và doanh thu hữu cơ.</p>
+  </div>
+</header>
+
+<!-- KEY INSIGHTS -->
+<section class="insights-section" id="key-insights">
+  <div class="container">
+    <p class="section-label">🔑 Key Insights</p>
+    <h2 class="section-title">6 Nhận Định <span>Cốt Lõi</span> Từ Báo Cáo</h2>
+    <div class="insights-grid">
+
+      <div class="insight-card c-purple">
+        <span class="insight-icon">🏗️</span>
+        <div class="insight-num">01</div>
+        <h3>Kiến Trúc Nội Dung "Người nhận → Dịp" Là Tối Thượng</h3>
+        <p>Công thức chuyển đổi cao nhất không phải "sản phẩm trước". Đó là <strong>người nhận + dịp + sản phẩm + cá nhân hóa + vấn đề giải quyết</strong>. Google và Etsy đều xác nhận xu hướng mua quà dẫn đầu bởi người nhận, không phải danh mục sản phẩm.</p>
+        <span class="insight-tag">Chiến lược nội dung</span>
+      </div>
+
+      <div class="insight-card c-gold">
+        <span class="insight-icon">💰</span>
+        <div class="insight-num">02</div>
+        <h3>3 Dịp Lễ Có Chi Tiêu Kỷ Lục – Ưu Tiên Ngay</h3>
+        <p>NRF xác nhận chi tiêu kỷ lục cho <strong>Ngày Của Mẹ, Valentine, Ngày Của Cha</strong> trong các chu kỳ gần đây. Cộng thêm tốc nghiệp, sinh nhật, kỷ niệm – đây là "nguồn thu cốt lõi" không thể bỏ qua.</p>
+        <span class="insight-tag">Dịp lễ ưu tiên</span>
+      </div>
+
+      <div class="insight-card c-cyan">
+        <span class="insight-icon">📈</span>
+        <div class="insight-num">03</div>
+        <h3>Truy Vấn Hội Thoại Tăng 70% – Nội Dung Evergreen Là Vũ Khí</h3>
+        <p>Google 2025: truy vấn <em>"Tell me about…"</em> tăng <strong>70% YoY</strong>, truy vấn <em>"How do I…"</em> đạt mức cao nhất mọi thời đại. Nội dung evergreen giải quyết vấn đề (không chỉ hướng dẫn theo mùa) là lớp thu hút khách hàng cốt lõi.</p>
+        <span class="insight-tag">Xu hướng tìm kiếm</span>
+      </div>
+
+      <div class="insight-card c-pink">
+        <span class="insight-icon">🚀</span>
+        <div class="insight-num">04</div>
+        <h3>Hai Engine Tăng Trưởng Song Song</h3>
+        <p><strong>Engine 1 – Dịp có lịch:</strong> Ngày Của Mẹ, Tốt nghiệp, Giáng Sinh… đỉnh điểm có thể dự đoán. <strong>Engine 2 – Evergreen:</strong> "quà cho người có tất cả", "in gì lên áo", "quà giao hàng nhanh"… hoạt động quanh năm và không bao giờ lỗi thời.</p>
+        <span class="insight-tag">Chiến lược 2 động cơ</span>
+      </div>
+
+      <div class="insight-card c-orange">
+        <span class="insight-icon">🌍</span>
+        <div class="insight-num">05</div>
+        <h3>Wonder Nên Dẫn Đầu Về Niềm Tự Hào Văn Hóa & Thể Thao</h3>
+        <p>Wonder Print Shop đã có hàng tồn kho mạnh cho: quốc kỳ, di sản văn hóa (African, Polynesian, Native American, Vikings), thể thao (bóng bầu dục, khúc côn cầu, cricket). Cần biến chúng thành <strong>trang đích landable, có thể xếp hạng</strong> – không chỉ SKU sâu trong catalog.</p>
+        <span class="insight-tag">Phân biệt thương hiệu</span>
+      </div>
+
+      <div class="insight-card c-red">
+        <span class="insight-icon">📸</span>
+        <div class="insight-num">06</div>
+        <h3>Print Your Wear Cần Biến Cảm Xúc Thành Tài Sản SEO</h3>
+        <p>Brand đã biết "job-to-be-done" cảm xúc của mình (quà tốt nghiệp, kỷ niệm, ngày của mẹ, quà ảnh). Vấn đề: phần lớn nhu cầu đang bị <strong>"kẹt" trong sản phẩm và module homepage</strong>, chưa trở thành trang editorial/danh mục có khả năng lập chỉ mục SEO rộng rãi.</p>
+        <span class="insight-tag">Khoảng trống cần lấp</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAIN REPORT -->
+<main class="main-content">
+  <div class="container">
+
+    <!-- TOC -->
+    <nav class="toc" aria-label="Mục lục">
+      <h3>📋 Mục Lục Báo Cáo</h3>
+      <ol>
+        <li><a href="#tom-tat">Tóm Tắt Điều Hành</a></li>
+        <li><a href="#co-so-nghien-cuu">Cơ Sở Nghiên Cứu & Tín Hiệu Website</a></li>
+        <li><a href="#chu-de-uu-tien">Chủ Đề Ưu Tiên – Dịp Lễ & Người Nhận</a></li>
+        <li><a href="#chu-de-evergreen">Chủ Đề Evergreen – Giải Quyết Vấn Đề</a></li>
+        <li><a href="#lifestyle">Phong Cách Sống, Thời Trang, Văn Hóa & Sở Thích</a></li>
+        <li><a href="#the-thao-yeu-nuoc">Thể Thao, Yêu Nước & Xu Hướng</a></li>
+        <li><a href="#lich-seo">Lịch SEO Năm 2026</a></li>
+        <li><a href="#template">Mẫu Brief Nội Dung</a></li>
+        <li><a href="#do-luong">Đo Lường & Thử Nghiệm</a></li>
+        <li><a href="#gioi-han">Giới Hạn & Câu Hỏi Mở</a></li>
+      </ol>
+    </nav>
+
+    <!-- 1. TÓM TẮT -->
+    <section class="report-section" id="tom-tat">
+      <h2><span class="icon">📌</span> 1. Tóm Tắt Điều Hành</h2>
+      <p>Hai website được ưu tiên chỉ ra hai mô hình nhu cầu chiến thắng khác nhau. <strong>Wonder Print Shop</strong> mạnh nhất ở điểm giao giữa cá nhân hóa với <strong>fan thể thao, bản sắc quốc gia/văn hóa, khoảnh khắc yêu nước, và tự thể hiện qua trang phục</strong>: điều hướng trực tiếp và bộ sưu tập cá nhân hóa nhấn mạnh bóng chày, khúc côn cầu, bóng bầu dục Mỹ, polo, áo Hawaii, giày, mũ, bình nước và phụ kiện – trong khi trang chủ đẩy mạnh "Xu Hướng Thể Thao 2026," "Kỷ Niệm 250 Năm Nước Mỹ," và các bộ sưu tập tự hào văn hóa như African, Polynesian, Native American, và Vikings.</p>
+      <p><strong>Print Your Wear</strong> mạnh nhất ở điểm giao giữa cá nhân hóa với <strong>quà tặng dịp quan trọng, kể chuyện qua ảnh, bình nước, kỷ niệm, và các dịp gia đình</strong>: các trang đã được lập chỉ mục nhấn mạnh quần áo, bình nước, đồ trang trí ngoài trời, phụ kiện xe, hướng dẫn quà ảnh, và bán chạy nhất xoay quanh <strong>tốt nghiệp, kỷ niệm, Ngày Của Mẹ, quà cho bố, quà bài hát yêu thích, và các bộ sưu tập theo mùa như Mùa Hè và Quay Lại Trường Học</strong>.</p>
+
+      <div class="highlight-box">
+        <strong>Kiến trúc nội dung chuyển đổi cao nhất</strong> không phải "danh mục sản phẩm trước". Đó là: <strong>người nhận + dịp + sản phẩm + cá nhân hóa + vấn đề giải quyết</strong> — phù hợp với hướng dẫn của Google về việc sử dụng từ ngữ mà người dùng thực sự tìm kiếm, và xuất bản nội dung hữu ích, đáng tin cậy, lấy người dùng làm trung tâm.
+      </div>
+
+      <p>Các nguồn thu tốt nhất trong ngắn hạn là các ngày lễ lớn cộng với những vấn đề quà tặng "luôn được hỏi". Dữ liệu mùa vụ chính thức hỗ trợ ưu tiên <strong>Ngày Của Mẹ, Valentine, và Ngày Của Cha</strong>: NRF dự báo chi tiêu kỷ lục cho cả ba trong các chu kỳ gần đây nhất.</p>
+
+      <div class="highlight-box gold">
+        <strong>Kết quả thực tế: Danh mục hai động cơ.</strong> Động cơ 1 là các trang dịp lễ đỉnh điểm theo lịch. Động cơ 2 là các trang evergreen giải quyết vấn đề năm quanh: quà cho người có tất cả, in gì lên áo, quà giao hàng nhanh, mẹo ảnh tốt nhất, cách chọn size hoodie tùy chỉnh, ý tưởng quà dưới 25 hoặc 50 đô.
+      </div>
+
+      <p><strong>Khuyến nghị mạnh nhất:</strong> Xây dựng hệ thống <strong>hub-và-cluster</strong> bắt đầu từ các dịp lễ có doanh thu cao nhất, sau đó xếp lớp theo người nhận, phong cách sống, văn hóa, và các biến thể giải quyết vấn đề. Wonder nên đẩy mạnh hơn vào <strong>thể thao, tự hào quốc gia/văn hóa, yêu nước, và phong cách du lịch</strong>. Print Your Wear nên mở rộng tích cực hơn vào <strong>hướng dẫn quà, trang đích quần áo và bình nước, và nội dung evergreen "cách lựa chọn"</strong> xoay quanh cột mốc, quà ảnh và gifting ý nghĩa.</p>
+    </section>
+
+    <!-- 2. CƠ SỞ NGHIÊN CỨU -->
+    <section class="report-section" id="co-so-nghien-cuu">
+      <h2><span class="icon">🔬</span> 2. Cơ Sở Nghiên Cứu & Tín Hiệu Website</h2>
+      <p>Báo cáo này ưu tiên hai tên miền được yêu cầu trước, sau đó tam giác hóa cơ hội bằng <strong>các ấn phẩm xu hướng tìm kiếm chính thức của Google</strong>, phương pháp luận Google Ads/Semrush về nghiên cứu từ khóa, trang merchandising của các platform sản phẩm, dữ liệu chi tiêu mùa vụ NRF, và báo cáo xu hướng tìm kiếm Etsy.</p>
+
+      <h3>🛒 Wonder Print Shop – Nhận Xét</h3>
+      <p><strong>Wonder Print Shop</strong> có độ rộng bất thường đối với một nhà bán lẻ ngách cá nhân hóa: quần áo, đồ trang trí nhà, phụ kiện, giày và catalog cá nhân hóa rất lớn. Nhưng sự đặc thù tập trung vào <strong>tiêu đề sản phẩm</strong>, không đủ trong các hub người nhận hoặc dịp có thể được lập chỉ mục. Cơ hội là biến những gì đã tồn tại — SKU thể thao-quốc gia, SKU tự hào, SKU yêu nước, và phụ kiện du lịch — thành các trang đích rộng hơn có thể xếp hạng cao hơn các sản phẩm đơn lẻ.</p>
+
+      <h3>🎁 Print Your Wear – Nhận Xét</h3>
+      <p><strong>Print Your Wear</strong> có câu chuyện rõ ràng hơn xoay quanh cột mốc và quy trình cá nhân hóa. Các trang được lập chỉ mục đã hiển thị chuỗi <em>"Cách Cá Nhân Hóa Quà Ảnh Hoàn Hảo"</em>, các module theo mùa như Mùa Hè và Quay Lại Trường Học, và bán chạy nhất xoay quanh tốt nghiệp, kỷ niệm, Ngày Của Mẹ, quà cho bố và cá nhân hóa bài hát/ảnh. Khoảng trống là phần lớn nhu cầu cảm xúc của website vẫn bị kẹt bên trong sản phẩm hoặc module trang chủ thay vì mở rộng thành nội dung editorial và trải nghiệm danh mục có thể được tìm kiếm.</p>
+
+      <div class="highlight-box cyan">
+        <strong>Bài học từ các nền tảng lớn:</strong> Printful định vị quà cá nhân hóa đa dạng (mugs, quần áo, phụ kiện, quà baby, Giáng Sinh, Valentine, Ngày Của Mẹ, Ngày Của Cha) mà không có tối thiểu đơn hàng. VistaPrint và 4imprint cho thấy bình nước tùy chỉnh rộng đến mức nào — mugs, tumblers, bình du lịch, can coolers, gift sets. Shutterfly cho thấy các bộ sưu tập theo người nhận và dịp có thể cùng tồn tại trong một kiến trúc merchandising. Điều này mạnh mẽ hỗ trợ việc mở rộng trang đích của cả hai website.
+      </div>
+    </section>
+
+    <!-- 3. CHỦ ĐỀ ƯU TIÊN: DỊP LỄ & NGƯỜI NHẬN -->
+    <section class="report-section" id="chu-de-uu-tien">
+      <h2><span class="icon">🎯</span> 3. Chủ Đề Ưu Tiên – Dịp Lễ & Người Nhận</h2>
+      <p>Mô hình tính điểm dưới đây sử dụng thang <strong>15 điểm tổng hợp</strong> từ: Phù hợp chuyển đổi + Nhu cầu + Động lực xu hướng.</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Điểm</th>
+              <th>Chủ Đề</th>
+              <th>Từ Khóa Mục Tiêu</th>
+              <th>Sản Phẩm Phù Hợp Nhất</th>
+              <th>Hook Cá Nhân Hóa</th>
+              <th>Thời Điểm</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="score-badge score-15">15</span></td>
+              <td><strong>Quà Ngày Của Mẹ cá nhân hóa</strong></td>
+              <td>mothers day gift; personalized gifts for mom; custom mom tumbler</td>
+              <td>Áo thun, áo hoodie, tumbler, mugs, tote</td>
+              <td>Tên con, hoa sinh nhật, "mom est.", ảnh, thông điệp</td>
+              <td>Feb–May</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-14">14</span></td>
+              <td><strong>Quà Giáng Sinh cá nhân hóa</strong></td>
+              <td>personalized christmas gifts; custom holiday gifts; gifts for family</td>
+              <td>Áo len, ornament, tumbler, mugs, mũ, chăn</td>
+              <td>Tên gia đình, ảnh thú cưng, năm, câu chuyện nội bộ</td>
+              <td>Aug–Dec</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-14">14</span></td>
+              <td><strong>Quà Ngày Của Cha</strong></td>
+              <td>father's day gift; gift for dad; custom dad shirt</td>
+              <td>Áo thun, hoodie, tumbler, mugs, mũ</td>
+              <td>Tên con, "dad est.", badge sở thích, ảnh</td>
+              <td>Apr–Jun</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-14">14</span></td>
+              <td><strong>Ý tưởng quà sinh nhật</strong></td>
+              <td>birthday gifts; personalized birthday gifts; custom birthday shirt</td>
+              <td>Áo thun, tumbler, mugs, tote</td>
+              <td>Tuổi, tháng sinh, cung hoàng đạo, câu tùy chỉnh</td>
+              <td>Luôn có; Q4 tăng</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-14">14</span></td>
+              <td><strong>Quà kỷ niệm cho đôi</strong></td>
+              <td>anniversary gift; first anniversary gift; custom couple gift</td>
+              <td>Áo đôi, mugs, tumbler</td>
+              <td>Tên, ngày, tọa độ, lời bài hát, ảnh</td>
+              <td>Luôn có; Jan–Feb và Q4</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-14">14</span></td>
+              <td><strong>Quà Valentine</strong></td>
+              <td>valentines gifts for him; valentines gifts for her; custom couple shirt</td>
+              <td>Áo đôi, mugs, tumbler, phụ kiện</td>
+              <td>Chữ cái đầu, câu chuyện chung, ngày kỷ niệm, ảnh</td>
+              <td>Dec–Feb</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-14">14</span></td>
+              <td><strong>Quà Tốt Nghiệp</strong></td>
+              <td>graduation gift; gift for graduate; class of [year] shirt</td>
+              <td>Áo thun, tumbler, mugs</td>
+              <td>Tên, trường, năm tốt nghiệp, bằng cấp, ảnh</td>
+              <td>Mar–Jun</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-13">13</span></td>
+              <td><strong>Quà Cho Mẹ</strong></td>
+              <td>gifts for mom; unique gifts for mom; custom gifts for mom</td>
+              <td>Quần áo, mugs, tumbler, tote</td>
+              <td>Tên, hoa, câu trích dẫn viết tay</td>
+              <td>Luôn có; Q4</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-13">13</span></td>
+              <td><strong>Quà Cho Ba</strong></td>
+              <td>gift for dad; best gifts for dad; custom tumbler for dad</td>
+              <td>Áo thun, hoodie, mũ, tumbler</td>
+              <td>Chủ đề sở thích, tên con, màu đội</td>
+              <td>Luôn có; Jun + Q4</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-13">13</span></td>
+              <td><strong>Quà Cho Giáo Viên</strong></td>
+              <td>teacher gift; teacher tumbler; teacher shirt</td>
+              <td>Tumbler, mugs, áo thun, tote</td>
+              <td>Tên trường, lớp, danh sách học sinh, câu cửa miệng giáo viên</td>
+              <td>Mar–Jul; Nov–Dec</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-13">13</span></td>
+              <td><strong>Quà Theo Ngân Sách</strong></td>
+              <td>personalized gifts under 25; gifts under 50; affordable custom gifts</td>
+              <td>Mugs, tumbler, áo thun, can cooler</td>
+              <td>Văn bản ngắn, chữ viết tắt, ảnh một tấm</td>
+              <td>Luôn có; Q4 đỉnh</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-12">12</span></td>
+              <td><strong>Quà Ngày Của Mẹ Đầu Tiên</strong></td>
+              <td>1st mother day gift; first mothers day gifts from baby</td>
+              <td>Áo thun, mugs, tumbler, chăn</td>
+              <td>Tên em bé, ngày sinh, ảnh siêu âm</td>
+              <td>Jan–May</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Thứ tự này được hỗ trợ bởi chi tiêu kỷ lục của NRF cho Ngày Của Mẹ, Valentine và Ngày Của Cha; xu hướng mùa vụ của Etsy xoay quanh Ngày Của Mẹ, tốt nghiệp và quà giáo viên; và đường cong xu hướng từ khóa công khai cho kỷ niệm, sinh nhật, "quà cho ba," "quà cho mẹ" và quà cá nhân hóa.</p>
+    </section>
+
+    <!-- 4. EVERGREEN -->
+    <section class="report-section" id="chu-de-evergreen">
+      <h2><span class="icon">🌱</span> 4. Chủ Đề Evergreen – Giải Quyết Vấn Đề & Cột Mốc</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Điểm</th>
+              <th>Chủ Đề</th>
+              <th>Từ Khóa Mục Tiêu</th>
+              <th>Định Dạng Tốt Nhất</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="score-badge score-12">12</span></td>
+              <td><strong>Quà "Chỉ Vì Thôi" & Nghĩ Đến Bạn</strong></td>
+              <td>just because gifts; thinking of you gifts; encouragement gifts</td>
+              <td>Hướng dẫn quà cảm xúc</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-12">12</span></td>
+              <td><strong>Quà Tưởng Niệm & Chia Buồn</strong></td>
+              <td>sympathy gift; memorial gift; grief gift</td>
+              <td>Hướng dẫn viết nhẹ nhàng</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-12">12</span></td>
+              <td><strong>Quà Tưởng Nhớ Thú Cưng</strong></td>
+              <td>pet memorial gift; dog memorial gift; cat memorial gift</td>
+              <td>Hub tưởng nhớ thú cưng đuôi dài</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-12">12</span></td>
+              <td><strong>Quà Em Bé Mới & Thai Kỳ</strong></td>
+              <td>new baby gift; pregnancy announcement gift; new mom gift</td>
+              <td>Hướng dẫn quà cột mốc</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-12">12</span></td>
+              <td><strong>Quà Đám Cưới & Vợ Chồng Mới</strong></td>
+              <td>newlyweds gifts; wedding gifts personalized; newlywed mugs</td>
+              <td>Hướng dẫn người nhận + sự kiện</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-12">12</span></td>
+              <td><strong>Bộ Phù Dâu & Tiệc Trước Hôn Nhân</strong></td>
+              <td>bridesmaid shirts; bachelorette party tumbler; bridal party gifts</td>
+              <td>Trang bundle + checklist</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-11">11</span></td>
+              <td><strong>Áo Đôi Matching</strong></td>
+              <td>matching couple shirts; his and hers shirts; custom couple tees</td>
+              <td>Hướng dẫn phong cách + bộ sưu tập</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-11">11</span></td>
+              <td><strong>Áo Họp Mặt Gia Đình</strong></td>
+              <td>family reunion shirts; reunion tumbler; custom family vacation shirts</td>
+              <td>Hướng dẫn lập kế hoạch sự kiện</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-11">11</span></td>
+              <td><strong>Quà Cá Nhân Hóa Giao Hàng Gấp</strong></td>
+              <td>last minute personalized gifts; fast shipping custom gifts</td>
+              <td>Trang đích khẩn cấp</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-10">10</span></td>
+              <td><strong>Quà Cho Người Có Tất Cả</strong></td>
+              <td>gift for someone who has everything; unique personalized gifts</td>
+              <td>Bài viết giải quyết vấn đề</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-10">10</span></td>
+              <td><strong>Nên Viết Gì Lên Áo/Bình Nước</strong></td>
+              <td>what to put on a personalized shirt; tumbler quote ideas</td>
+              <td>Danh sách ý tưởng + ví dụ</td>
+            </tr>
+            <tr>
+              <td><span class="score-badge score-9">9</span></td>
+              <td><strong>Mẹo Ảnh Tốt Nhất Cho Quà Cá Nhân Hóa</strong></td>
+              <td>best photo for custom mug; how to upload photo for gifts</td>
+              <td>Hướng dẫn từng bước</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="highlight-box">
+        Nhóm này được củng cố bởi định vị "Just Because" của Hallmark, tín hiệu "Treat Yourself" của Etsy, và sự gia tăng năm 2025 của Google trong hành vi tìm kiếm hội thoại <strong>"tell me about"</strong> và <strong>"how do I"</strong>.
+      </div>
+    </section>
+
+    <!-- 5. LIFESTYLE -->
+    <section class="report-section" id="lifestyle">
+      <h2><span class="icon">🌴</span> 5. Phong Cách Sống, Thời Trang, Văn Hóa & Sở Thích</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Điểm</th>
+              <th>Chủ Đề</th>
+              <th>Từ Khóa Mục Tiêu</th>
+              <th>Thời Điểm</th>
+              <th>Website Phù Hợp Nhất</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="score-badge score-13">13</span></td><td><strong>Áo & Bình Nước Quay Lại Trường Học</strong></td><td>back to school shirts; teacher tumbler; student shirts</td><td>Jun–Sep</td><td>Print Your Wear</td></tr>
+            <tr><td><span class="score-badge score-11">11</span></td><td><strong>Áo Du Hè, Biển & Tàu Cruise</strong></td><td>family vacation shirts; beach trip shirts; cruise shirts</td><td>Apr–Aug</td><td>Wonder</td></tr>
+            <tr><td><span class="score-badge score-10">10</span></td><td><strong>Đồ Dùng Du Lịch Cá Nhân Hóa</strong></td><td>personalized luggage cover; travel tumbler; custom tote</td><td>Luôn có; Mùa hè/Q4</td><td>Wonder</td></tr>
+            <tr><td><span class="score-badge score-10">10</span></td><td><strong>Quà Cắm Trại, Leo Núi & Ngoài Trời</strong></td><td>camping gifts personalized; hiking tumbler; outdoor hoodie</td><td>Mar–Oct</td><td>Cả hai</td></tr>
+            <tr><td><span class="score-badge score-10">10</span></td><td><strong>Quà Cho Người Mê Xe & Jeep</strong></td><td>jeep gift; off road shirt; custom tire cover</td><td>Luôn có</td><td>Print Your Wear</td></tr>
+            <tr><td><span class="score-badge score-10">10</span></td><td><strong>Quà Mom Nuôi Chó/Mèo</strong></td><td>dog mom gift; cat mom gift; pet lover tumbler</td><td>Luôn có; May + Q4</td><td>Cả hai</td></tr>
+            <tr><td><span class="score-badge score-9">9</span></td><td><strong>Quà Yêu Thực Vật & Làm Vườn</strong></td><td>plant mom gift; gardening mug; custom garden shirt</td><td>Mar–Jun</td><td>Cả hai</td></tr>
+            <tr><td><span class="score-badge score-9">9</span></td><td><strong>Quà Cho Người Mê Sách</strong></td><td>gifts for reader; book lover mug; reading tote</td><td>Luôn có; Q4</td><td>Cả hai</td></tr>
+            <tr><td><span class="score-badge score-9">9</span></td><td><strong>Quà Chăm Sóc Bản Thân & Sức Khỏe</strong></td><td>self care gifts; wellness gift ideas; cozy tumbler gift</td><td>Luôn có; Nov–Dec</td><td>Cả hai</td></tr>
+            <tr><td><span class="score-badge score-10">10</span></td><td><strong>Áo Câu Chữ Nội Bộ Tùy Chỉnh</strong></td><td>custom text shirts; personalized quote shirt; slogan tee</td><td>Luôn có</td><td>Cả hai</td></tr>
+            <tr><td><span class="score-badge score-11">11</span></td><td><strong>Hàng Hóa Tự Hào Văn Hóa</strong></td><td>african pride shirt; polynesian shirt; native pride apparel</td><td>Luôn có; tháng di sản</td><td>Wonder</td></tr>
+            <tr><td><span class="score-badge score-11">11</span></td><td><strong>Trang Độc Lập Quốc Gia & Di Sản</strong></td><td>jamaica independence shirt; barbados shirt; ireland rugby shirt</td><td>Theo lịch quốc gia</td><td>Wonder</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 6. THỂ THAO & YÊU NƯỚC -->
+    <section class="report-section" id="the-thao-yeu-nuoc">
+      <h2><span class="icon">🏆</span> 6. Thể Thao, Yêu Nước & Xu Hướng</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Điểm</th>
+              <th>Chủ Đề</th>
+              <th>Từ Khóa Mục Tiêu</th>
+              <th>Thời Điểm</th>
+              <th>Website</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="score-badge score-12">12</span></td><td><strong>America 250 & Đồ Yêu Nước</strong></td><td>america 250 shirt; patriotic tumbler; july 4 custom shirt</td><td>Apr–Jul</td><td>Wonder</td></tr>
+            <tr><td><span class="score-badge score-11">11</span></td><td><strong>Black History & Tự Hào Juneteenth</strong></td><td>juneteenth shirt personalized; black pride apparel</td><td>Jan–Jun</td><td>Wonder</td></tr>
+            <tr><td><span class="score-badge score-10">10</span></td><td><strong>St. Patrick & Tự Hào Ireland</strong></td><td>st patricks day shirts; irish pride shirt; shamrock shirt</td><td>Jan–Mar</td><td>Wonder</td></tr>
+            <tr><td><span class="score-badge score-10">10</span></td><td><strong>Áo Halloween & Drinkware Tiệc</strong></td><td>halloween custom shirt; spooky tumbler; family halloween shirts</td><td>Aug–Oct</td><td>Cả hai</td></tr>
+            <tr><td><span class="score-badge score-10">10</span></td><td><strong>Quà Dịp Lễ Tạ Ơn</strong></td><td>thanksgiving host gift; custom mug for host; family kitchen gift</td><td>Sep–Nov</td><td>Print Your Wear</td></tr>
+            <tr><td><span class="score-badge score-11">11</span></td><td><strong>World Cup 2026 – Đồ Fan Bóng Đá</strong></td><td>world cup 2026 shirt; soccer fan jersey custom; team supporter shirt</td><td>6–10 tuần trước giải</td><td>Wonder</td></tr>
+            <tr><td><span class="score-badge score-10">10</span></td><td><strong>March Madness – Watch Party</strong></td><td>march madness shirt; bracket party tumbler; basketball fan tee</td><td>Jan–Mar</td><td>Wonder</td></tr>
+            <tr><td><span class="score-badge score-10">10</span></td><td><strong>Baseball & Baseball/Softball Mom</strong></td><td>baseball mom shirt; opening day shirt; custom baseball jersey</td><td>Feb–Jun</td><td>Wonder</td></tr>
+            <tr><td><span class="score-badge score-11">11</span></td><td><strong>Sports Mom/Dad & Game-Day</strong></td><td>football mom shirt; soccer dad tumbler; game day hoodie</td><td>Luôn có; theo mùa thể thao</td><td>Wonder</td></tr>
+            <tr><td><span class="score-badge score-9">9</span></td><td><strong>Đồ Fan Khúc Côn Cầu</strong></td><td>hockey jersey custom; hockey hoodie; suomi hockey shirt</td><td>Sep–Mar</td><td>Wonder</td></tr>
+            <tr><td><span class="score-badge score-9">9</span></td><td><strong>Jersey Rugby & Cricket Quốc Gia</strong></td><td>rugby polo personalized; cricket shirt custom; country jersey</td><td>Theo giải đấu</td><td>Wonder</td></tr>
+            <tr><td><span class="score-badge score-9">9</span></td><td><strong>Quà Cho HLV & Tri Ân Đội</strong></td><td>coach gift; custom coach tumbler; team thank you shirt</td><td>Apr–Jun; Nov–Dec</td><td>Cả hai</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 7. LỊCH SEO -->
+    <section class="report-section" id="lich-seo">
+      <h2><span class="icon">📅</span> 7. Lịch SEO Năm Xuất Bản 2026</h2>
+      <p>Lịch nên chạy như một hệ thống cuốn chiếu, không phải chiến dịch một lần. Các báo cáo mùa vụ của Etsy khuyến nghị rõ ràng nên xuất bản và làm mới nội dung <strong>trước khi</strong> nhu cầu người mua tăng đột biến. Trong thực tế, điều đó có nghĩa là xuất bản hoặc làm mới đáng kể trang cốt lõi trước khi nhu cầu người mua tăng lên.</p>
+
+      <div class="calendar-grid">
+        <div class="cal-card"><div class="cal-season" style="color:#a59fff">❄️ Đông</div><h4>Valentine & Kỷ Niệm</h4><p>Cửa sổ xuất bản: Giữa tháng 12 – Đầu tháng 1</p><span class="cal-priority p-high">Ưu tiên: 14</span></div>
+        <div class="cal-card"><div class="cal-season" style="color:#06d6a0">🌸 Xuân</div><h4>Ngày Của Mẹ & Lần Đầu Làm Mẹ</h4><p>Cửa sổ xuất bản: Đầu tháng 2 – Giữa tháng 3</p><span class="cal-priority p-high">Ưu tiên: 15</span></div>
+        <div class="cal-card"><div class="cal-season" style="color:#ffd166">🎓 Xuân</div><h4>Tốt Nghiệp, Giáo Viên, HLV</h4><p>Cửa sổ xuất bản: Đầu tháng 3 – Giữa tháng 4</p><span class="cal-priority p-high">Ưu tiên: 14</span></div>
+        <div class="cal-card"><div class="cal-season" style="color:#ff9dbb">👨 Xuân</div><h4>Ngày Của Cha & Dad Sở Thích</h4><p>Cửa sổ xuất bản: Đầu tháng 4 – Giữa tháng 5</p><span class="cal-priority p-high">Ưu tiên: 14</span></div>
+        <div class="cal-card"><div class="cal-season" style="color:#f77f00">🇺🇸 Hè</div><h4>Yêu Nước, America 250, Juneteenth</h4><p>Cửa sổ xuất bản: Giữa tháng 4 – Cuối tháng 5</p><span class="cal-priority p-med">Ưu tiên: 12</span></div>
+        <div class="cal-card"><div class="cal-season" style="color:#00b4d8">🌊 Hè</div><h4>Du Lịch Mùa Hè & Họp Mặt</h4><p>Cửa sổ xuất bản: Giữa tháng 4 – Giữa tháng 6</p><span class="cal-priority p-med">Ưu tiên: 11</span></div>
+        <div class="cal-card"><div class="cal-season" style="color:#a59fff">🎒 Hè</div><h4>Quay Lại Trường Học</h4><p>Cửa sổ xuất bản: Đầu tháng 6 – Giữa tháng 7</p><span class="cal-priority p-high">Ưu tiên: 13</span></div>
+        <div class="cal-card"><div class="cal-season" style="color:#ffaa44">⚽ Sự Kiện</div><h4>World Cup & Giải Đấu Thể Thao</h4><p>Xuất bản 4–10 tuần trước sự kiện</p><span class="cal-priority p-med">Ưu tiên: 11</span></div>
+        <div class="cal-card"><div class="cal-season" style="color:#ef476f">🎃 Thu</div><h4>Halloween & Novelty Mùa Thu</h4><p>Cửa sổ xuất bản: Đầu tháng 8 – Đầu tháng 9</p><span class="cal-priority p-norm">Ưu tiên: 10</span></div>
+        <div class="cal-card"><div class="cal-season" style="color:#ffd166">🍂 Thu</div><h4>Lễ Tạ Ơn & Quà Chủ Nhà</h4><p>Cửa sổ xuất bản: Giữa tháng 9 – Cuối tháng 10</p><span class="cal-priority p-norm">Ưu tiên: 10</span></div>
+        <div class="cal-card"><div class="cal-season" style="color:#06d6a0">🎄 Đông</div><h4>Giáng Sinh, Ngân Sách & Gấp</h4><p>Giữa tháng 8 – Đầu tháng 10, làm mới tuần trong Nov–Dec</p><span class="cal-priority p-high">Ưu tiên: 15</span></div>
+        <div class="cal-card"><div class="cal-season" style="color:#9ba3c9">🔄 Quanh Năm</div><h4>Trang Evergreen Giải Quyết Vấn Đề</h4><p>Liên tục, tất cả các năm</p><span class="cal-priority p-med">Ưu tiên: 12</span></div>
+      </div>
+    </section>
+
+    <!-- 8. TEMPLATE -->
+    <section class="report-section" id="template">
+      <h2><span class="icon">✍️</span> 8. Mẫu Brief Nội Dung</h2>
+      <p>Google khuyến nghị tiêu đề và tiêu mục mô tả, mô tả meta độc đáo, và nội dung lấy người dùng làm trung tâm thực sự trả lời mục tiêu của người dùng. Các mẫu dưới đây được xây dựng để chuyển đổi trong khi vẫn phù hợp với các nguyên tắc đó.</p>
+
+      <div class="brief-card">
+        <h4>🌸 Hub Ngày Của Mẹ</h4>
+        <div class="brief-meta">
+          <div class="brief-meta-item"><label>SEO Title</label><p>Best Personalized Mother's Day Gifts for Mom, Grandma, and New Moms</p></div>
+          <div class="brief-meta-item"><label>H1</label><p>Quà Tặng Ngày Của Mẹ Cá Nhân Hóa Mà Mẹ Sẽ Luôn Giữ Mãi</p></div>
+          <div class="brief-meta-item"><label>Meta Description</label><p>Nhấn mạnh "chu đáo," "tùy chỉnh," khoảng giá, và sẵn sàng giao hàng</p></div>
+          <div class="brief-meta-item"><label>CTA</label><p>Build Mom's Gift / Tạo Quà Cho Mẹ</p></div>
+        </div>
+        <div class="brief-outline">Phác thảo: <span>Giới thiệu theo người nhận → dưới $25/$50 → ý tưởng quần áo → tumbler/mugs → cách cá nhân hóa → giao hàng nhanh → FAQ</span></div>
+      </div>
+
+      <div class="brief-card">
+        <h4>👨‍👧 Hub Ngày Của Cha</h4>
+        <div class="brief-meta">
+          <div class="brief-meta-item"><label>SEO Title</label><p>31 Personalized Father's Day Gifts for Dads Who Love Sports, Grilling, and Family Time</p></div>
+          <div class="brief-meta-item"><label>H1</label><p>Quà Tặng Ngày Của Cha Cá Nhân Hóa Cho Mọi Loại Ba</p></div>
+          <div class="brief-meta-item"><label>Meta Description</label><p>Dẫn đầu với sở thích + khả năng tùy chỉnh</p></div>
+          <div class="brief-meta-item"><label>CTA</label><p>Customize Dad's Gift / Tùy Chỉnh Quà Cho Ba</p></div>
+        </div>
+        <div class="brief-outline">Phác thảo: <span>Hồ sơ từng loại ba → quà theo sở thích → quần áo → drinkware → ngân sách → viết gì cho ba → thời hạn giao hàng</span></div>
+      </div>
+
+      <div class="brief-card">
+        <h4>🎓 Hub Tốt Nghiệp</h4>
+        <div class="brief-meta">
+          <div class="brief-meta-item"><label>SEO Title</label><p>Best Personalized Graduation Gifts for High School and College Grads</p></div>
+          <div class="brief-meta-item"><label>H1</label><p>Quà Tốt Nghiệp Cá Nhân Hóa Cho Lớp [Năm]</p></div>
+          <div class="brief-meta-item"><label>Meta Description</label><p>Dẫn đầu với năm tốt nghiệp và giá trị lưu giữ kỷ niệm</p></div>
+          <div class="brief-meta-item"><label>CTA</label><p>Add Name and Class Year / Thêm Tên và Năm Tốt Nghiệp</p></div>
+        </div>
+        <div class="brief-outline">Phác thảo: <span>Theo cấp độ → theo mối quan hệ → áo + tumbler tốt nhất → in/khắc gì → màu trường → FAQ</span></div>
+      </div>
+
+      <div class="brief-card">
+        <h4>🎂 Evergreen – Sinh Nhật</h4>
+        <div class="brief-meta">
+          <div class="brief-meta-item"><label>SEO Title</label><p>Personalized Birthday Gifts by Age, Recipient, and Budget</p></div>
+          <div class="brief-meta-item"><label>H1</label><p>Quà Sinh Nhật Cá Nhân Hóa Cho Mọi Người Trong Danh Sách</p></div>
+          <div class="brief-meta-item"><label>Meta Description</label><p>Hứa hẹn quyết định dễ dàng</p></div>
+          <div class="brief-meta-item"><label>CTA</label><p>Start a Birthday Design / Bắt Đầu Thiết Kế Sinh Nhật</p></div>
+        </div>
+        <div class="brief-outline">Phác thảo: <span>Theo người nhận → theo giá → theo sản phẩm → ý tưởng vui/tùy chỉnh → góc cung hoàng đạo/tháng sinh → FAQ</span></div>
+      </div>
+
+      <div class="brief-card">
+        <h4>⚽ Thể Thao & Fan</h4>
+        <div class="brief-meta">
+          <div class="brief-meta-item"><label>SEO Title</label><p>Custom Sports Fan Shirts, Jerseys, and Tumblers for Game Day</p></div>
+          <div class="brief-meta-item"><label>H1</label><p>Đồ Game Day Cá Nhân Hóa Cho Fan Thể Thao & Bố Mẹ Của Vận Động Viên</p></div>
+          <div class="brief-meta-item"><label>Meta Description</label><p>Bao gồm tinh thần đội + cá nhân hóa</p></div>
+          <div class="brief-meta-item"><label>CTA</label><p>Add Name and Number / Thêm Tên và Số</p></div>
+        </div>
+        <div class="brief-outline">Phác thảo: <span>Theo môn thể thao → theo vai trò (mom/dad/fan/cầu thủ) → ý tưởng số tùy chỉnh → trang giải đấu → FAQ</span></div>
+      </div>
+
+      <div class="highlight-box gold">
+        <strong>Bài học từ Etsy:</strong> <strong>Kể câu chuyện của người nhận</strong>, không chỉ sản phẩm. Điều này đặc biệt quan trọng trên các trang hướng dẫn quà và nên định hình phần giới thiệu, tiêu đề, chú thích ảnh và nội dung module sản phẩm.
+      </div>
+    </section>
+
+    <!-- 9. ĐO LƯỜNG -->
+    <section class="report-section" id="do-luong">
+      <h2><span class="icon">📊</span> 9. Đo Lường & Thử Nghiệm</h2>
+
+      <p><strong>Search Console</strong> cung cấp các chỉ số SEO đầu phễu hữu ích nhất: impressions, clicks, CTR, và vị trí trung bình. <strong>GA4 ecommerce</strong> cung cấp các chỉ số thương mại trên trang hữu ích nhất: xem sản phẩm, thêm vào giỏ, thanh toán, mua hàng, khuyến mãi, và hoàn tiền.</p>
+
+      <h3>📈 Bộ KPI Theo Dõi</h3>
+      <div class="kpi-grid">
+        <div class="kpi-card"><h4>Impressions Hữu Cơ Theo Cluster</h4><p>Search Console theo nhóm trang và chủ đề truy vấn</p><span class="kpi-tag">Search Console</span></div>
+        <div class="kpi-card"><h4>Clicks Hữu Cơ & CTR</h4><p>Theo landing page – đo tiêu đề, đoạn trích và thương hiệu có thu hút lượt truy cập không</p><span class="kpi-tag">Search Console</span></div>
+        <div class="kpi-card"><h4>Doanh Thu / Phiên Hữu Cơ</h4><p>KPI tổng hợp tốt nhất cho SEO phải chuyển đổi, không chỉ xếp hạng</p><span class="kpi-tag">GA4 + Ecommerce</span></div>
+        <div class="kpi-card"><h4>Tỷ Lệ Xem → Thêm Giỏ</h4><p>Đo độ phù hợp merchandising trên các SEO lander</p><span class="kpi-tag">GA4 Events</span></div>
+        <div class="kpi-card"><h4>Tỷ Lệ Giỏ → Bắt Đầu Thanh Toán</h4><p>Phát hiện ma sát sau khi có hứng thú với sản phẩm</p><span class="kpi-tag">GA4 Funnel</span></div>
+        <div class="kpi-card"><h4>Tỷ Lệ Hoàn Thành Thanh Toán</h4><p>Nắm bắt vấn đề về shipping, trust, giá và UX</p><span class="kpi-tag">GA4 Purchase</span></div>
+        <div class="kpi-card"><h4>AOV Theo Chủ Đề Nội Dung</h4><p>Quan trọng cho quyết định bundle và cross-sell</p><span class="kpi-tag">GA4 Item Value</span></div>
+        <div class="kpi-card"><h4>Tỷ Lệ Tương Tác Cá Nhân Hóa</h4><p>Theo dõi sự kiện trên trang – xem khách có dùng widget tên/ảnh/chữ không</p><span class="kpi-tag">Custom Events</span></div>
+        <div class="kpi-card"><h4>Tỷ Lệ Hoàn Trả / Hủy</h4><p>Quan trọng vì đơn hàng cá nhân hóa có rủi ro lỗi không thể đảo ngược</p><span class="kpi-tag">GA4 + OMS</span></div>
+        <div class="kpi-card"><h4>Doanh Thu Được Hỗ Trợ Từ Liên Kết Nội Bộ</h4><p>Đo liệu nội dung editorial có đưa khách đến trang đích và PDP không</p><span class="kpi-tag">GA4 Attribution</span></div>
+      </div>
+
+      <h3>🧪 Các Bài Thử Nghiệm A/B Được Khuyến Nghị</h3>
+      <div class="abtest-grid">
+        <div class="abtest-card"><h4>Framing Hero</h4><p>Tiêu đề người nhận trước vs tiêu đề sản phẩm trước — Mua quà thường được dẫn dắt bởi người nhận</p></div>
+        <div class="abtest-card"><h4>Nội Dung CTA</h4><p>"Customize Yours" vs "Create Their Gift" vs "Add Name & Preview" — Thương mại cá nhân hóa thường được hưởng lợi từ động từ hành động gắn với quyền sở hữu</p></div>
+        <div class="abtest-card"><h4>Thứ Tự Module Sản Phẩm</h4><p>Drinkware trước vs quần áo trước vs bundle phụ kiện trước — Ưu tiên sản phẩm có thể khác nhau theo dịp</p></div>
+        <div class="abtest-card"><h4>Vị Trí Bằng Chứng Xã Hội</h4><p>Đánh giá/UGC phía trên fold vs phía dưới module đầu tiên — Quà cá nhân hóa cần trust sớm</p></div>
+        <div class="abtest-card"><h4>Kiến Trúc Giá</h4><p>Thẻ sản phẩm đơn lẻ vs bộ "bundle and save" — Tăng AOV trên trang quà hứng thú cao</p></div>
+        <div class="abtest-card"><h4>Ví Dụ Cá Nhân Hóa</h4><p>Sản phẩm trống vs mockup có tên/ảnh — Giảm "thuế tưởng tượng" và tăng clickthrough</p></div>
+        <div class="abtest-card"><h4>Khẩn Cấp Giao Hàng</h4><p>Banner thời hạn vs không có banner — Đặc biệt quyết định cho Ngày Của Mẹ, Giáng Sinh và trang giao hàng gấp</p></div>
+        <div class="abtest-card"><h4>Góc Điều Hướng</h4><p>Theo người nhận vs theo dịp vs theo sản phẩm — Tiết lộ cách khán giả thực sự mua sắm</p></div>
+        <div class="abtest-card"><h4>Phong Cách Hình Ảnh</h4><p>Cảnh lifestyle vs grid sản phẩm sạch — Etsy nhấn mạnh kể chuyện và bối cảnh sản phẩm</p></div>
+        <div class="abtest-card"><h4>Độ Sâu Bản Sao</h4><p>Listicle ngắn vs hướng dẫn với "viết gì / ai phù hợp / FAQ" — Trang giải quyết vấn đề thường chuyển đổi tốt hơn với nhiều sự tự tin hơn</p></div>
+      </div>
+    </section>
+
+    <!-- 10. GIỚI HẠN -->
+    <section class="report-section" id="gioi-han">
+      <h2><span class="icon">⚠️</span> 10. Giới Hạn & Câu Hỏi Mở</h2>
+
+      <p>Đây là một <strong>báo cáo mẫu trang chiến lược</strong>, không phải phân tích crawl đầy đủ, log-file, hoặc xuất Search Console. Tác giả không chạy kiểm tra kỹ thuật đầy đủ về khả năng lập chỉ mục, canonicalization, faceting hay tốc độ trang, vì vậy các ghi chú kiểm tra tập trung vào <strong>cơ hội nội dung và cấu trúc merchandising</strong>, không phải kiểm tra kỹ thuật SEO toàn diện.</p>
+
+      <div class="highlight-box">
+        <strong>Lưu ý về dữ liệu xu hướng:</strong> Các đường thời gian của Google Trends Explore không được trích dẫn trực tiếp từ giao diện công khai trong môi trường này. Vì lý do đó, điểm xu hướng trong báo cáo này được tam giác hóa từ các ấn phẩm xu hướng riêng của Google, Google Shopping Holiday 100, báo cáo xu hướng tìm kiếm Etsy, chi tiêu mùa vụ NRF và đường cong xu hướng từ khóa công khai. Điều đó đủ mạnh cho ưu tiên chiến lược, nhưng không thay thế được việc xuất các phép so sánh Google Trends của riêng bạn cho lịch biên tập cuối cùng.
+      </div>
+
+      <div class="highlight-box gold">
+        <strong>Về mix sản phẩm:</strong> Print Your Wear có vẻ kiếm doanh thu nhiều từ plaques và quà ảnh, trong khi yêu cầu ở đây là tập trung vào cơ hội thương mại điện tử rộng rãi trong <strong>quần áo, drinkware và phụ kiện</strong>. Vì vậy, tín hiệu plaque-heavy được sử dụng để hiểu nhu cầu của khán giả, nhưng tập hợp cơ hội cuối cùng được cố ý hướng đến các lớp sản phẩm e-commerce rộng hơn được yêu cầu.
+      </div>
+    </section>
+
+  </div><!-- end container -->
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>📄 Dịch từ <strong>deep-research-report.md</strong> &nbsp;·&nbsp; Xuất: <strong>22/04/2026</strong> &nbsp;·&nbsp; Công cụ dịch: Antigravity AI</p>
+    <p style="margin-top:8px; color: var(--text-muted);">Báo cáo chiến lược SEO cho thương mại điện tử cá nhân hóa đa ngách – Wonder Print Shop & Print Your Wear</p>
+  </div>
+</footer>
+
+</body>
+</html>
