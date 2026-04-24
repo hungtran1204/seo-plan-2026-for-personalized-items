@@ -1,6 +1,7 @@
 # Báo Cáo Nghiên Cứu SEO (VI) – Guideline Tổng Thể Cho Ecom Cá Nhân Hóa Đa Ngách
 
 File mục tiêu: [`bao-cao-nghien-cuu-seo-viet (wonder & print).html`](./bao-cao-nghien-cuu-seo-viet%20(wonder%20%26%20print).html)
+Link báo cáo: [`Nghiên Cứu SEO Thương Mại Điện Tử - Cá Nhân Hóa Đa Ngách`](https://hungtran1204.github.io/seo-plan-2026-for-personalized-items/)
 
 ## 1) File này là gì?
 Đây là **bản báo cáo/guide chiến lược SEO** cho mô hình **thương mại điện tử bán items cá nhân hóa sâu và đa ngách**, được **dịch sang tiếng Việt** (trong hero ghi ngày dịch `22/04/2026`) và trình bày dạng **dashboard HTML tĩnh** để team đọc nhanh, triển khai nhanh.
